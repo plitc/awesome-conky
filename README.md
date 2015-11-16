@@ -32,6 +32,7 @@ Platform
 Usage
 =====
 ```
+   # sudo apt-get install awesome awesome-extra conky conky-all hddtemp mpd
    # cp -prfv .conky ~/
    # sudo cp -pfv ./usr/share/awesome/themes/default/background.png /usr/share/awesome/themes/default/background.png
    # mkdir -p ~/.config/awesome
