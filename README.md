@@ -3,6 +3,9 @@ LICENSE
 =======
 * BSD 2-Clause (modifications)
 
+Sources:
+* (wallpaper) http://milkmoustache.deviantart.com/art/Tron-wallpaper-v2-210700824
+
 Background
 ==========
 * awesome conky style template
