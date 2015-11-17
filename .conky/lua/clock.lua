@@ -110,7 +110,7 @@ settings_table = {
     max=100,
     bg_colour=0xffffff,
     bg_alpha=0.1,
-    fg_colour=0x00ffff,
+    fg_colour=0xef00ff,
     fg_alpha=0.6,
     x=155, y=348,
     radius=40,
