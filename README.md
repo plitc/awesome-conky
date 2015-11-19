@@ -32,12 +32,13 @@ Platform
 Usage
 =====
 ```
-   # sudo apt-get install awesome awesome-extra conky conky-all hddtemp mpd
+   # sudo apt-get install awesome awesome-extra conky conky-all unagi hddtemp mpd
    # cp -prfv .conky ~/
    # sudo cp -pfv ./usr/share/awesome/themes/default/background.png /usr/share/awesome/themes/default/background.png
    # mkdir -p ~/.config/awesome
    # cp -pfv /etc/xdg/awesome/rc.lua ~/.config/awesome
    # echo 'awful.util.spawn_with_shell("~/.conky/startup.sh")' >> ~/.config/awesome/rc.lua
+   # echo 'awful.util.spawn_with_shell("/usr/bin/unagi")' >> ~/.config/awesome/rc.lua
 
    $ awesome restart
 ```
