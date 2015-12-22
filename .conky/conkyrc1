@@ -92,10 +92,10 @@ ${offset 17}${if_up wlp3s0}WiFi       ${wireless_link_qual_perc wlp3s0}% $else $
 
 #..: NET TRAFFIC :..
 ${color 00ffff}${voffset 20}${cpugraph cpu6 1,200}${voffset 1}${cpugraph cpu6 17,1}${color3}
-${offset 15}${if_up wlp3s0}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed wlp3s0}$else ${font Nimbus Mono L:size=8 style=bold}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed wlp3s0}$endif${font Nimbus Mono L:size=8 style=bold}
-${offset 15}${if_up wlp3s0}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed wlp3s0}$else ${font Nimbus Mono L:size=8 style=bold}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed wlp3s0}$endif${font Nimbus Mono L:size=8 style=bold}
+${offset 15}${if_up bond0}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed bond0}$else ${font Nimbus Mono L:size=8 style=bold}${voffset -5}Dw ${font neuropol:size=20} ${voffset -8}${downspeed bond0}$endif${font Nimbus Mono L:size=8 style=bold}
+${offset 15}${if_up bond0}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed bond0}$else ${font Nimbus Mono L:size=8 style=bold}${voffset 6}Up ${font neuropol:size=20} ${voffset -7}${upspeed bond0}$endif${font Nimbus Mono L:size=8 style=bold}
 ${offset 20}${voffset -1}${cpubar cpu6 0, 110}${voffset 2}${color1}
-${offset 15}${if_up ppp0} tDown   ${totaldown ppp0}$else tDown   ${totaldown wlp3s0}$endif
+${offset 15}${if_up ppp0} tDown   ${totaldown ppp0}$else tDown   ${totaldown bond0}$endif
 #
 #..: USB DEVICES :..
 #-- set for your use --
@@ -127,5 +127,12 @@ $else       ..:: MPD not running ::..
 #${else}       ..:: Exaile not running ::..
 
 $endif
+
+#..: LXC-TO-GO :..
+${color 00ffff}${voffset 50}${cpugraph cpu6 1,250}${voffset 1}${cpugraph cpu6 17,1}${color3}
+#${offset 40}${voffset -10}LXC-to-GO
+#${offset 40}${voffset -10}${font neuropol:size=6} ${execpi 60 sudo lxc-to-go show}
+#${offset 20}${voffset -10}${font neuropol:size=8}${if_existing /etc/lxc-to-go/lxc-to-go.conf}${execpi 60 sudo lxc-ls --active --fancy --fancy-format name,memory,ram,swap | egrep -v "managed|haproxy|gitlab|letsencrypt|samba|etherpad|newflower|docker|gajim|games|githunting|mindnet|redbrowser|remotessh|thunderbird|torbrowser"}$else..:NO LXC-to-GO:..$endif
+${offset 20}${voffset -10}${font neuropol:size=8}${if_existing /etc/lxc-to-go/lxc-to-go.conf}${execpi 60 sudo lxc-ls --active --fancy --fancy-format name,memory,ram,swap | egrep -v "managed|haproxy|gitlab|letsencrypt|samba|etherpad|newflower|docker|gajim|games|githunting|mindnet|redbrowser|remotessh|thunderbird|torbrowser|gorge|transmission|x11browser"}$else..:NO LXC-to-GO:..$endif
 
 

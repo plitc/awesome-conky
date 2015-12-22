@@ -78,7 +78,7 @@ TEXT
 ##-- List your todo by priority --
 ##
 ${color2}${voffset 5}${font Nimbus Mono L:size=9 style=bold}${alignc}TODO
-${color3}${font Nimbus Mono L:size=8 style=bold}${alignc}${execpi 600 cat ~/.todo/todo.txt | head -7 | sort}
+${color3}${font Nimbus Mono L:size=8 style=bold}${alignc}${execpi 600 cat ~/.todo/todo.txt | head -10 | sort}
 ##
 ##..: Separation line
 ##

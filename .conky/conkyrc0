@@ -118,3 +118,11 @@ ${offset 170}home   ${fs_free /home} / ${fs_size /home}
 #${offset 170}tHD    ${hddtemp /dev/sda}°C
 
 
+#..: LXC-TO-GO :..
+${color 00ffff}${offset 0}${voffset 45}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+#${color 00ffff}${voffset 50}${cpugraph cpu6 1,250}${voffset 1}${cpugraph cpu6 17,1}${color3}
+#${offset 40}${voffset -10}LXC-to-GO
+#${offset 40}${voffset -10}${font neuropol:size=6} ${execpi 60 sudo lxc-to-go show}
+${offset 50}${voffset -10}${font neuropol:size=8}${if_existing /etc/lxc-to-go/lxc-to-go.conf}${execpi 60 sudo lxc-ls --active --fancy --fancy-format name,memory,ram,swap | egrep "NAME|-|managed|haproxy|gitlab|letsencrypt|samba|etherpad|newflower|docker|gajim|games|githunting|mindnet|redbrowser|remotessh|thunderbird|torbrowser"}$else..:NO LXC-to-GO:..$endif
+
+
